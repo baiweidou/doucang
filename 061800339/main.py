@@ -68,9 +68,12 @@ def get_weight(file_data,file_sentence):
 if __name__ == '__main__':
     time_start = time.time()
     #原始文档打开
-    orig_file = open("sys.argv[1]",'r', encoding='UTF-8')
+    x1 = sys.argv[1]    #原始文本路径
+    x2 = sys.argv[2]    #相似文本路径
+    x3 = sys.argv[3]    #存放答案文本路径
+    orig_file = open(x1,'r', encoding='UTF-8')
     #相似文档打开
-    orig_sim_file = open("sys.argv[2]",'r',encoding='utf-8')
+    orig_sim_file = open(x2,'r',encoding='utf-8')
     #原始文档写入
     orig_data = orig_file.read()
     #相似文档写入
@@ -103,7 +106,7 @@ if __name__ == '__main__':
     ans = (str("%.2f") % ans)
     print(ans)
     #写入文件
-    file = open('sys.argv[3]','w', encoding='UTF-8')
+    file = open(x3,'w', encoding='UTF-8')
     file.write(ans)
     file.close()
     #计时
